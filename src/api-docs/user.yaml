@@ -1,0 +1,251 @@
+paths:
+  /users/list:
+    get:
+      summary: Get all users
+      tags:
+        - Users
+      responses:
+        200:
+          description: List of users
+        400:
+          description: bad request
+        500:
+          description: Internal server error
+  /users/:
+    post:
+      tags:
+        - Users
+      summary: create users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  example: Abc
+                lastName:
+                  type: string
+                  example: ghi
+                middleName:
+                  type: string
+                  example: def
+                email:
+                  type: string
+                  example: adb123@gamil.com
+                password:
+                  type: string
+                  example: Abc#123@H
+                gender:
+                  type: array
+                  example: MALE
+                dateOfBirth:
+                  type: string
+                  format: date-time
+                city:
+                  type: string
+                  example: rajkot
+                state:
+                  type: string
+                  example: Gujrat
+                zipcode:
+                  type: string
+                  example: 123456
+                mobileNumber:
+                  type: string
+                  example: 8849140527
+                status:
+                  type: array
+                  example: ACTIVE
+                roles:
+                  type: array
+                  example: USER
+      responses:
+        201:
+          description: user created
+        400:
+          description: bad request
+        500:
+          description: Internal server
+  /users/{id}:
+    get:
+      summary: Get user by id
+      tags:
+        - Users
+      parameters:
+        - name: id
+          in: path
+          description: user id
+          required: true
+          schema:
+            type: string
+            example: 69affc802084f2710963310d
+      responses:
+        200:
+          description: user by id
+        400:
+          description: invalid id
+        404:
+          description: user not found
+        500:
+          description: internal server error
+    put:
+      tags:
+        - Users
+      summary: Updated user
+      parameters:
+        - name: id
+          in: path
+          description: updated uses by id
+          required: true
+          schema:
+            type: string
+            example: 69affc802084f2710963310d
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  example: Abc
+                lastName:
+                  type: string
+                  example: ghi
+                middleName:
+                  type: string
+                  example: def
+                email:
+                  type: string
+                  example: adb123@gamil.com
+                password:
+                  type: string
+                  example: Abc#123@H
+                gender:
+                  type: array
+                  example: MALE
+                dateOfBirth:
+                  type: string
+                  format: date-time
+                city:
+                  type: string
+                  example: rajkot
+                state:
+                  type: string
+                  example: Gujrat
+                zipcode:
+                  type: string
+                  example: 123456
+                mobileNumber:
+                  type: string
+                  example: 8849140527
+                status:
+                  type: array
+                  example: ACTIVE
+                roles:
+                  type: array
+                  example: ADMIN
+      responses:
+        200:
+          description: user updated
+        400:
+          description: bad request
+        500:
+          description: Internal server error
+    delete:
+      tags:
+        - Users
+      summary: Delete Users
+      parameters:
+        - name: id
+          in: path
+          description: User deletd by id
+          required: true
+          schema:
+            type: string
+            example: 69affc802084f2710963310d
+      responses:
+        200:
+          description: User deleted successfully
+        404:
+          description: User not found
+        500:
+          description: Internal server error
+  /users/login:
+    post:
+      summary: login user with email & passwored
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: -email
+                -password
+              properties:
+                email:
+                  type: string
+                  example: adb123@gamil.com
+                password:
+                  type: string
+                  example: Abc#123@H
+      responses:
+        200:
+          description: Login successfully
+        401:
+          description: Invalid email or passwored
+        403:
+          description: User is Blocked
+        404:
+          description: user not found
+  /users/{id}/unblock:
+    patch:
+      tags:
+        - Users
+      summary: admin can unblock user
+      parameters:
+        - name: id
+          in: path
+          description: User id to unblock
+          required: true
+          schema:
+            type: string
+            example: 69affc802084f2710963310d
+      responses:
+        200:
+          description: user unblock successfully
+        401:
+          description: unauthorized
+        403:
+          description: you are not admin
+  /users/verify-otp:
+    post:
+      summary: verify otp & login
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - otp
+              properties:
+                email:
+                  type: string
+                  example: adb123@gamil.com
+                otp:
+                  type: string
+                  example:
+      responses:
+        200:
+          description: Login successfully
+        500:
+          description: Internal server error

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Account Alert</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f6f8; font-family:Arial, sans-serif;">
+
+  <table align="center" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px; margin:auto; background:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+    
+    <!-- Header -->
+    <tr>
+      <td style="background:#dc3545; color:#ffffff; padding:20px; text-align:center;">
+        <h2 style="margin:0;">⚠️ Security Alert</h2>
+      </td>
+    </tr>
+
+    <!-- Body -->
+    <tr>
+      <td style="padding:25px; color:#333;">
+        
+        <h3 style="margin-top:0;">Hello {{fullName}},</h3>
+
+        <p style="font-size:15px;">
+          Your account has been 
+          <strong style="color:#dc3545;">Blocked</strong> 
+          due to multiple failed login attempts.
+        </p>
+
+        
+        <table width="100%" cellpadding="10" cellspacing="0" style="background:#f8f9fa; border-radius:6px; margin:15px 0;">
+          <tr>
+            <td><strong>Email:</strong></td>
+            <td>{{email}}</td>
+          </tr>
+          <tr>
+            <td><strong>Location:</strong></td>
+            <td>{{city}}, {{state}}</td>
+          </tr>
+          <tr>
+            <td><strong>Status:</strong></td>
+            <td style="color:#dc3545;"><strong>{{status}}</strong></td>
+          </tr>
+        </table>
+
+        <p style="font-size:14px;">
+          If this wasn't you, please contact support immediately to secure your account.
+        </p>
+
+        <!-- Button -->
+        <div style="text-align:center; margin:25px 0;">
+          <a href="#" style="background:#007bff; color:#ffffff; padding:12px 20px; text-decoration:none; border-radius:5px; font-size:14px;">
+            Contact Support
+          </a>
+        </div>
+
+        <p style="font-size:14px; color:#777;">
+          Stay safe,<br/>
+          <strong>Security Team</strong>
+        </p>
+
+      </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+      <td style="background:#f1f1f1; text-align:center; padding:15px; font-size:12px; color:#777;">
+        © 2026 Your Company. All rights reserved.
+      </td>
+    </tr>
+
+  </table>
+
+</body>
+</html>

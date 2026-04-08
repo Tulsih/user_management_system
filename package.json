@@ -1,0 +1,35 @@
+{
+  "name": "node.js_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tulsih/Node.js_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tulsih/Node.js_Project/issues"
+  },
+  "homepage": "https://github.com/Tulsih/Node.js_Project#readme",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "git": "^0.1.5",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.4.1",
+    "mustache": "^4.2.0",
+    "nodemailer": "^8.0.4",
+    "otp-generator": "^4.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "zed": "^0.1.0",
+    "zod": "^4.3.6"
+  }
+}
