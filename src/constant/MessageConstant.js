@@ -53,4 +53,5 @@ const MessageConstant = {
   NOT_FOUND: "Not found",
   ALREADY_EXIST: "Already exists",
 };
+
 module.exports = MessageConstant;
