@@ -1,5 +1,4 @@
 //genrated tokens and verify tokens
-
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
